@@ -1,0 +1,48 @@
+class Usuario {
+    constructor (nombre, apellido, libros, mascotas) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.libros = libros;
+        this.mascotas = mascotas
+    }
+
+    getFullName () {
+        return (`${this.nombre} ${this.apellido}`)
+    }
+
+    addMascota (mascota) {
+        this.mascotas.push(mascota)
+    }
+
+    countMascotas () {
+        return this.mascotas.length
+    }
+
+    addBook (libro, autor) {
+        this.libros.push({nombre: libro , autor: autor})
+    }
+
+    getBookNames () {
+        return (`${this.libros.map((libro) => libro.nombre)}`)
+    }
+}
+
+let usuarioUno = new Usuario ("Paul", "Jhonson", [], [])
+usuarioUno.addBook("El Caballero de la Armadura Oxidada", "Robert Fisher")
+usuarioUno.addBook("Orgullo y Prejuicio ", "Jane Austen")
+usuarioUno.addMascota("Shakespeare")
+usuarioUno.addMascota("Apolo")
+usuarioUno.addMascota("Socrates")
+usuarioUno.getFullName()
+usuarioUno.countMascotas()
+usuarioUno.getBookNames()
+
+let usuarioDos = new Usuario ("Patricia", "Rodriguez", [], [])
+usuarioDos.addBook("Coaching Ontológico Profesional", "Oscar Anzorena")
+usuarioDos.addBook("El Quinto Acuerdo", "José Ruiz y Miguel Ángel Ruiz Macías")
+usuarioDos.addBook("Los Cuatro Acuerdos", "Miguel Ángel Ruiz Macías")
+usuarioDos.addMascota("Pancho")
+usuarioDos.addMascota("Chancho")
+usuarioDos.getFullName()
+usuarioDos.countMascotas()
+usuarioDos.getBookNames()
